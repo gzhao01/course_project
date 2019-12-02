@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>updating</title>
+  </head>
+  <body>
+    <form role="form" action="/haveUpdated" method="post">
+      <div class="form-group">
+        <label for="grade">grade</label>
+        <input id="grade" type="text" name="grade" value="{{datas[0].Grade}}">
+        <input type="hidden" name="id" value="{{datas[0].Course_Record_ID}}">
+        <input class="btn btn-primary" type="submit" value="submit">
+      </div>
+    </form>
+  </body>
+</html>

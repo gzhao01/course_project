@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>teachers page</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css">
+    <link rel="stylesheet" href="/stylesheets/bootstrap-theme.css">
+  </head>
+  <body>
+    <!-- navigation     -->
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="nacigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">INFORMATION SYSTEM</a>
+        </div>
+        <div>
+          <ul class="nav navbar-nav pull-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                {{Teacher_name}} <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="/">log out</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- information -->
+    <h2>SELF INFORMATION</h2><br>
+    <label>ID: {{Teacher_ID}}</label><br>
+    <label>Name: {{Teacher_name}}</label><br>
+    <label>resume:{{resume}}</label><br>
+    <div class="strip"></div>
+    <h2>COURSE INFORMATION</h2>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Course_ID</th>
+          <th>Course Name</th>
+          <th>Student ID</th>
+          <th>student Name</th>
+          <th>Grade</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{each courses as course index}}
+        <tr>
+          <td>{{course.Course_ID}}</td>
+          <td>{{course.Course_Name}}</td>
+          <td>{{course.Student_ID}}</td>
+          <td>{{course.Student_name}}</td>
+          <td>
+            {{course.Grade}}
+            <a class="btn btn-default" type="button"
+            href="/update/{{course.Course_ID}}-{{course.Student_ID}}">
+              change
+            </a>
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+
+    <script src="/javascripts/jquery.js"></script>
+  	<script src="/javascripts/bootstrap.js"></script>
+  </body>
+</html>

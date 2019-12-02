@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css">
+    <link rel="stylesheet" href="/stylesheets/bootstrap-theme.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="nacigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">INFORMATION SYSTEM</a>
+        </div>
+      </div>
+    </nav>
+    <div class="center-show">
+      <img src="images/logo.png" class="logo" alt="gzhao01">
+      <div class="self-border">
+          <h1>WELCOME</h1>
+          <form role="form" action="/login" method="post">
+            <!-- id input -->
+            <div class="form-group">
+              <label for="user_id" class="col-sm-2 control-label">ID</label>
+              <div class="col-sm-12">
+                <input id="user_id" type="text" class="form-control" name="user_id"
+                 value="{{user_id}}" placeholder="YOUR ID"><br>
+              </div>
+            </div>
+            <!-- password input -->
+            <div class="form-group">
+              <label for="user_password" class="col-sm-2 control-label">PASSWORD</label>
+              <div class="col-sm-12">
+                <input id="user_password" type="text" class="form-control" name="user_password"
+                value="{{user_password}}" placeholder="YOUR PASSWORD"><br>
+              </div>
+            </div>
+            <!-- submit button -->
+            <div class="form-group">
+              <div>
+                <input type="submit" class="btn btn-primary" style="width:240px" value="login">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    <script type="text/javascript" src="/javascripts/jquery.js"></script>
+    <script type="text/javascript" scr="/javascripts/bootstrap.js"></script>
+  </body>
+</html>

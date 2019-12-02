@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>students page</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css">
+    <link rel="stylesheet" href="/stylesheets/bootstrap-theme.css">
+</head>
+<body>
+  <!-- navigation -->
+  <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="nacigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">INFORMATION SYSTEM</a>
+      </div>
+      <div>
+        <ul class="nav navbar-nav pull-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              {{Student_name}} <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="/">log out</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- information -->
+    <h2>SELF INFORMATION</h2><br>
+    <label>ID: {{Student_ID}}</label><br>
+    <label>NAME: {{Student_name}}</label><br>
+    <!-- <label>GPA: {{GPA1}}</label><br> -->
+    <div class="strip"></div>
+    <h2>COURSE INFORMATION</h2>
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th>Course_ID</th>
+          <th>Course_Name</th>
+          <th>Credit_Point</th>
+          <th>Teacher_ID</th>
+          <th>Teacher_Name</th>
+          <th>Grade</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{each courses as course index}}
+        <tr>
+          <td>{{course.Course_ID}}</td>
+          <td>{{course.Course_Name}}</td>
+          <td>{{course.Credit_Point}}</td>
+          <td>{{course.Teacher_ID}}</td>
+          <td>{{course.Teacher_name}}</td>
+          <td>{{course.Grade}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+
+    <script src="/javascripts/jquery.js"></script>
+    <script src="/javascripts/bootstrap.js"></script>
+</body>
+</html>

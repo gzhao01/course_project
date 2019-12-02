@@ -1,0 +1,30 @@
+body {
+  padding: 50px;
+  /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
+}
+
+a {
+  color: #00B7FF;
+}
+
+.center-show{
+  position: absolute;
+  width:300px;
+  height:200px;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.self-border{
+  border: 1px solid grey;
+  border-radius: 6px;
+}
+.logo{
+  width:300px;
+}
+.strip{
+  border: solid 1px #ccc;
+  margin-bottom: 6px;
+  width:100%;
+}
