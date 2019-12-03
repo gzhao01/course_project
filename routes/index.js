@@ -140,7 +140,7 @@ router.get("/edit/:id", function(req,res,next){
 });
 router.post("/resumeUpdate", function(req,res,next){
   var id = req.body.userid;
-  var resume = req.body.resume;
+  var resume = JSON.stringify(req.body.resume);
   var sql_redir = "update teacher set resume = "+ resume + " where User_ID = " + id;
   db.query(sql_redir, function(err2, rows2){
     res.redirect("/teachers/"+id);
