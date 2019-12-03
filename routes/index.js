@@ -96,7 +96,7 @@ router.get("/teachers/:id", function(req, res, next){
           Teacher_name: rows[0].Teacher_name,
           Resume: rows[0].resume,
           User_ID: id,
-          
+
           courses: courses
         });
       });
@@ -129,6 +129,22 @@ router.post("/haveUpdated", function(req, res, next){
 router.get("teacherAccount/:id", function(req, res, next){
   var id = req.params.id;
   res.redirect("teacher/"+id);
+});
+
+router.get("/edit/:id", function(req,res,next){
+  var id = req.params.id;
+  var sql = "select * from teacher where User_ID = " + id;
+  db.query(sql, function(err, rows){
+    res.render("edit",{teacher:rows[0]});
+  });
+});
+router.post("/resumeUpdate", function(req,res,next){
+  var id = req.body.userid;
+  var resume = req.body.resume;
+  var sql_redir = "update teacher set resume = "+ resume + " where User_ID = " + id;
+  db.query(sql_redir, function(err2, rows2){
+    res.redirect("/teachers/"+id);
+  });
 });
 
 module.exports = router;

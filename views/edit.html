@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css">
+    <link rel="stylesheet" href="/stylesheets/bootstrap-theme.css">
+  </head>
+  <body>
+    <form role="form" action="/resumeUpdate" method="post">
+      <div class="form-group">
+        <textarea class="form-control" rows="5" value="{{teacher.resume}}"
+        style="overflow:scroll; width:400px;" name="resume">{{teacher.resume}}</textarea>
+        <input type="hidden" name="userid" value="{{teacher.User_ID}}">
+        <input class="btn btn-default" type="submit" value="finish">
+      </div>
+    </form>
+
+    <script src="/javascripts/jquery.js"></script>
+    <script src="/javascripts/bootstrap.js"></script>
+  </body>
+</html>
